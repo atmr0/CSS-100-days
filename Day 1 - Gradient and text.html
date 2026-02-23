@@ -1,0 +1,108 @@
+<body>
+  <div class="frame">
+    <div class="center">
+      <div class="hundred">
+        <div class="zero"></div>
+        <div class="zero"></div>
+        <div id="one2"></div>
+        <div id="one1"></div>
+      </div>
+      <p id="days">DAYS</p>
+      <p id="challenge">CSS CHALLENGE</p>
+    </div>
+  </div>
+
+</body>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+  .frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to bottom left, #4EC5CA, #433AA0);
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .hundred {
+    display: flex;
+    margin-bottom: -0.7rem;
+    max-width: 200px;
+    flex-direction: row-reverse;
+    --border-width: 20px;
+    --size:
+  }
+
+
+  #one1 {
+    width: 1.5rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    margin-right: .5rem;
+    z-index: 2;
+  }
+
+  #one2 {
+    position: absolute;
+    height: 2.5rem;
+    width: 1.2rem;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    rotate: 50deg;
+    left:-1rem;
+    top:-1;
+  }
+
+  .zero {
+    width: 50px;
+    height: 50px;
+    margin-left: -1rem;
+    background-color: transparent;
+    border: 1.5rem solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    padding: 0;
+  }
+
+  p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #fff;
+    text-align-last: justify;
+    margin: 0;
+  }
+
+  #days {
+    font-size: 5rem;
+    text-justify: inter-character;
+  }
+
+  #challenge {
+    font-size: 1.5rem;
+    margin-top: -1.2rem;
+    padding-right: .5rem;
+  }
+</style>
