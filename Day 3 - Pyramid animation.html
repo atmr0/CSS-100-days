@@ -54,8 +54,9 @@
     width: 90px;
     height: 90px;
     z-index: 2;
-
     clip-path: circle(100% at 50% 50%);
+    opacity: 1;
+    animation: fade-black 4s cubic-bezier(.4, 0, .49, 1) infinite;
   }
 
   #pyramid #right-side {
@@ -98,7 +99,7 @@
     background-color: #C0B25E;
     width: 400px;
     height: 400px;
-    clip-path: polygon(147px 235px , 260px 234px,  306px 258px );
+    clip-path: polygon(147px 235px, 260px 234px, 306px 258px);
     animation: shadow-move 4s cubic-bezier(.4, 0, .49, 1) infinite;
     z-index: 3;
   }
@@ -117,6 +118,24 @@
     }
   }
 
+  @keyframes fade-black {
+    0% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
 
   @keyframes shadow-move {
     0% {
@@ -131,7 +150,7 @@
       clip-path: polygon(147px 235px , 260px 234px,  75px 258px );
     }
   }
-  
+
   /* These values I got right from the reference codepen*/
   /* https://codepen.io/roydigerhund/pen/PZxpKO */
   @keyframes pyramid-color {
