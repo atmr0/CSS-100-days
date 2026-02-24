@@ -1,0 +1,154 @@
+<body>
+  <div class="frame">
+    <div class="center">
+      <div class="center" id="background"></div>
+      <div class="center" id="animation-area">
+        <div class="center" id="sky"></div>
+        <div class="center" id="ground"></div>
+        <div class="center" id="sun"></div>
+
+        <!-- I could make it in CSS, like the shadow, but since it's static, I opted for SVG-->
+        <svg class="center" id="pyramid" width="400" height="400">
+          <path id="right-side" d="M 221 235 L 204 178 L 261 235"></path>
+          <path id="left-side" d="M 221 235 L 204 178 L 146 235"></path>
+        </svg>
+
+        <div class="center" id="shadow"></div>
+      </div>
+</body>
+
+<style>
+  .frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #background {
+    width: 400px;
+    height: 400px;
+    background-color: #272c34;
+  }
+
+  #animation-area {
+    background-color: white;
+    width: 90px;
+    height: 90px;
+    z-index: 2;
+
+    clip-path: circle(100% at 50% 50%);
+  }
+
+  #pyramid #right-side {
+    /* fill: #272C34; */
+    animation: pyramid-color reverse 4s cubic-bezier(.4, 0, .49, 1) infinite;
+    fill: #F4F4F4;
+  }
+
+  #pyramid #left-side {
+    animation: pyramid-color 4s cubic-bezier(.4, 0, .49, 1) infinite;
+  }
+
+  #sky {
+    width: 400px;
+    height: 400px;
+    background-color: #7DDFFC;
+    z-index: 0;
+  }
+
+  #ground {
+    width: 400px;
+    height: 100px;
+    top: 130px;
+    background-color: #f0de75;
+    z-index: 2;
+  }
+
+  #sun {
+    width: 35px;
+    height: 35px;
+    background-color: #FFEF00;
+    border-radius: 50%;
+    z-index: 5;
+
+    offset-path: path('M -87 40 A 1 1 0 0 1 87 40');
+    animation: moveSun 4s cubic-bezier(.4, 0, .49, 1) infinite;
+  }
+
+  #shadow {
+    background-color: #C0B25E;
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(147px 235px , 260px 234px,  306px 258px );
+    animation: shadow-move 4s cubic-bezier(.4, 0, .49, 1) infinite;
+    z-index: 3;
+  }
+
+  @keyframes moveSun {
+    0% {
+      offset-distance: 0%;
+    }
+
+    30% {
+      offset-distance: 30%;
+    }
+
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+
+  @keyframes shadow-move {
+    0% {
+      clip-path: polygon(147px 235px , 260px 234px,  306px 258px );
+    }
+
+    30% {
+      clip-path: polygon(147px 235px , 260px 234px,  234px 246px );
+    }
+
+    100% {
+      clip-path: polygon(147px 235px , 260px 234px,  75px 258px );
+    }
+  }
+  
+  /* These values I got right from the reference codepen*/
+  /* https://codepen.io/roydigerhund/pen/PZxpKO */
+  @keyframes pyramid-color {
+    0% {
+      fill: #272C34;
+    }
+
+    30% {
+      fill: #F4F4F4;
+    }
+
+    70% {
+      fill: #DDDADA;
+    }
+
+    100% {
+      fill: #272C34;
+    }
+  }
+</style>
