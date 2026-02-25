@@ -1,0 +1,107 @@
+<body>
+  <div class="frame">
+    <div class="center">
+      <div class="circle center" id="circle1"></div>
+      <div class="circle center" id="circle2"></div>
+      <div class="circle center" id="circle3"></div>
+    </div>
+  </div>
+</body>
+
+<style>
+  .frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #E56262;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  :root {
+    --bezier-curve: cubic-bezier(0.199, 1.065, 0.782, 0.976);
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: -50px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  #circle1 {
+    animation: circle1-animation 2.5s var(--bezier-curve) alternate infinite;
+  }
+
+  #circle2 {
+    animation: circle2-animation 2.5s var(--bezier-curve) alternate infinite;
+  }
+
+  #circle3 {
+    animation: circle3-animation 2.5s var(--bezier-curve) alternate infinite;
+  }
+
+  @keyframes circle1-animation {
+    0% {
+      transform: scale(0);
+    }
+
+    10% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes circle2-animation {
+    0% {
+      transform: scale(0);
+    }
+
+    40% {
+      transform: scale(0);
+    }
+    
+    100% {
+      transform: scale(0.65);
+    }
+  }
+
+  @keyframes circle3-animation {
+    0% {
+      transform: scale(0);
+    }
+
+    60% {
+      transform: scale(0);
+    }
+
+    95% {
+      transform: scale(0.3);
+    }
+
+    100% {
+      transform: scale(0.3);
+    }
+  }
+</style>
