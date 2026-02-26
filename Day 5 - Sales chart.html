@@ -1,0 +1,318 @@
+<body>
+  <div class="frame">
+    <div class="center">
+      <div id="chart">
+        <div id="header">
+          <div class="idk">
+            <span class="bold">WEEKLY REPORT</span>
+            <span>01. Feb - 07. Feb</span>
+          </div>
+          <div class="idk" id="right">
+            <span>Revenue</span>
+            <span class="bold">$ 3621.79</span>
+          </div>
+        </div>
+
+        <svg>
+          <line x1="12" y1="125" x2="268" y2="125" stroke="#eee" stroke-width="1" />
+          <line x1="12" y1="85" x2="268" y2="85" stroke="#eee" stroke-width="1" />
+          <line x1="12" y1="45" x2="268" y2="45" stroke="#eee" stroke-width="1" />
+        </svg>
+
+        <svg>
+          <polyline points="20,90 60,55 105,70 145,55 185,85 220,90 260,70" fill="none" stroke="#FA7373"
+            stroke-width="2" />
+        </svg>
+        <svg>
+          <polyline points="20,110 60,95 105,112 145,98 185,105 220,120 260,105" fill="none" stroke="#7BA2FF"
+            stroke-width="2" />
+        </svg>
+        <div id="red-points">
+          <div class="point center" id="point1">
+            <div class="tooltip center">458</div>
+          </div>
+          <div class="point center" id="point2">
+            <div class="tooltip center">812</div>
+          </div>
+          <div class="point center" id="point3">
+            <div class="tooltip center">746</div>
+          </div>
+          <div class="point center" id="point4">
+            <div class="tooltip center">877</div>
+          </div>
+          <div class="point center" id="point5">
+            <div class="tooltip center">517</div>
+          </div>
+          <div class="point center" id="point6">
+            <div class="tooltip center">434</div>
+          </div>
+          <div class="point center" id="point7">
+            <div class="tooltip center">458</div>
+          </div>
+        </div>
+
+        <div id="blue-points">
+          <div class="point center" id="point1">
+            <div class="tooltip center">26</div>
+          </div>
+          <div class="point center" id="point2">
+            <div class="tooltip center">41</div>
+          </div>
+          <div class="point center" id="point3">
+            <div class="tooltip center">22</div>
+          </div>
+          <div class="point center" id="point4">
+            <div class="tooltip center">36</div>
+          </div>
+          <div class="point center" id="point5">
+            <div class="tooltip center">25</div>
+          </div>
+          <div class="point center" id="point6">
+            <div class="tooltip center">13</div>
+          </div>
+          <div class="point center" id="point7">
+            <div class="tooltip center">20</div>
+          </div>
+        </div>
+
+
+
+        <div id="week-days">
+          <span class="week-day">MON</span>
+          <span class="week-day">TUE</span>
+          <span class="week-day">WED</span>
+          <span class="week-day">THU</span>
+          <span class="week-day">FRI</span>
+          <span class="week-day">SAT</span>
+          <span class="week-day">SUN</span>
+        </div>
+      </div>
+    </div>
+</body>
+
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+  .frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #42A7A1;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #chart {
+    width: 280px;
+    height: 220px;
+    border-radius: 3px;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3)
+  }
+
+  #header {
+    max-width: 100%;
+    max-height: 27%;
+    box-sizing: inherit;
+    border-radius: 3px 3px 0px 0px;
+    height: 27%;
+    background-color: #F1BA64;
+    color: white;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .idk {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: -8px;
+  }
+
+  #right {
+    align-items: flex-end;
+  }
+
+  .bold {
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
+  #week-days {
+    box-sizing: inherit;
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 28px;
+    width: 100%;
+    max-width: 100%;
+    bottom: 0%;
+    color: #444;
+    font-size: 9px;
+    padding: 0px 11px;
+  }
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: inherit;
+  }
+
+  #red-points,
+  #blue-points {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: inherit;
+  }
+
+  #red-points .point {
+    background-color: #FA7373;
+  }
+
+  #blue-points .point {
+    background-color: #7BA2FF;
+  }
+
+  .point {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    cursor:pointer;
+    z-index: 3;
+  }
+
+  .point:hover > .tooltip {
+    visibility: visible;
+    opacity: 1;
+    top: -300%;
+  }
+
+  .tooltip {
+    opacity: 0;
+    visibility: hidden;
+    position:relative;
+    font-size: smaller;
+    top: -200%;
+    width: fit-content;
+    padding: 4px 6px;
+    border-radius: 3px;
+    background-color: inherit;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.3s ease, top 0.3s ease;
+    z-index: 10;
+  }
+  .tooltip::after {
+    content: "◆";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 90%;
+    color: inherit;
+    transform-origin: center;
+    z-index: 9;
+  }
+
+  #red-points .tooltip::after {
+    color: #FA7373;
+  }
+
+  #blue-points .tooltip::after {
+    color: #7BA2FF;
+  }
+
+  #red-points #point1 {
+    left: 20px;
+    top: 90px;
+  }
+
+  #red-points #point2 {
+    left: 60px;
+    top: 55px;
+  }
+
+  #red-points #point3 {
+    left: 105px;
+    top: 70px;
+  }
+
+  #red-points #point4 {
+    left: 145px;
+    top: 55px;
+  }
+
+  #red-points #point5 {
+    left: 185px;
+    top: 85px;
+  }
+
+  #red-points #point6 {
+    left: 220px;
+    top: 90px;
+  }
+
+  #red-points #point7 {
+    left: 260px;
+    top: 70px;
+  }
+
+
+  #blue-points #point1 {
+    left: 20px;
+    top: 110px;
+  }
+
+  #blue-points #point2 {
+    left: 60px;
+    top: 95px;
+  }
+
+  #blue-points #point3 {
+    left: 105px;
+    top: 112px;
+  }
+
+  #blue-points #point4 {
+    left: 145px;
+    top: 98px;
+  }
+
+  #blue-points #point5 {
+    left: 185px;
+    top: 105px;
+  }
+
+  #blue-points #point6 {
+    left: 220px;
+    top: 120px;
+  } 
+
+  #blue-points #point7 {
+    left: 260px;
+    top: 105px;
+  } 
+</style>
