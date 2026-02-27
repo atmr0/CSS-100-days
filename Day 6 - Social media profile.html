@@ -1,0 +1,191 @@
+<body>
+  <div class="frame">
+    <div class="center">
+      <div class="center card">
+        <div id="profile">
+          <div id="profile-picture">
+            <img class="center" src="https://100dayscss.com/codepen/jessica-potter.jpg">
+            <div class="circle center" id="outer-circle"></div>
+            <div class="circle center" id="inner-circle"></div>
+          </div>
+          <span id="name">Jessica Potter</span>
+          <span id="title">Visual Artist</span>
+          <span class="button">Follow</span>
+          <span class="button">Message</span>
+        </div>
+        <div id="informations">
+
+          <div class="info">
+            <span class="number">523</span>
+            <span class="label">Posts</span>
+          </div>
+          <div class="info">
+            <span class="number">1387</span>
+            <span class="label">Likes</span>
+          </div>
+          <div class="info">
+            <span class="number">146</span>
+            <span class="label">Followers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+  .frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-image: linear-gradient(to top right, #EDBD6B, #CA7D4E);
+    color: #786450;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card {
+    width: 320;
+    height: 300;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3)
+  }
+
+  #informations {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0%;
+    width: 37%;
+    height: 100%;
+  }
+
+  #informations> :first-child {
+    border-top: none;
+  }
+
+  .info {
+    box-sizing: border-box;
+    background-color: #F5E8DF;
+    height: 100px;
+    width: 100%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid white;
+    line-height: 16px;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+  }
+
+  .info:hover {
+    background-color: #E1CFC2;
+  }
+
+  .number {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .label,
+  #title {
+    font-size: 11px;
+  }
+
+  #name {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  #profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 63%;
+  }
+
+  #profile-picture {
+    position: relative;
+    margin-top: 30px;
+    width: 85px;
+    height: 85px;
+    ;
+    border-radius: 50% 50% 0 0;
+    --border: 1px solid black;
+    cursor: pointer;
+    /* transform: translate(-50%, -50%); */
+  }
+
+  #inner-circle {
+    width: 75px;
+    height: 75px;
+    border-color: #786450 #786450 #786450 transparent;
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    border-color: #786450 transparent #786450 #786450;
+    transition: transform 2s ease-in-out;
+  }
+
+  #profile-picture:hover #inner-circle {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  #profile-picture:hover #outer-circle {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+
+  .button {
+    border: 1px solid #786450;
+    width: 110px;
+    padding: 7px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+
+    transition:all 0.2s ease-in;
+  }
+  .button:hover {
+    background-color: #786450;
+    color: white;
+  }
+
+  #title+.button {
+    margin-top: 30px;
+  }
+</style>
