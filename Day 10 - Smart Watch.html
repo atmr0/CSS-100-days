@@ -1,0 +1,153 @@
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="center" id="watch">
+                <svg id="red-circle" width="200" height="200">
+                    <circle cx="50%" cy="50%" r="97.5" stroke="#F85B5B" fill="none" stroke-width="3"
+                        stroke-dasharray="612"></circle>
+                </svg>
+                <svg id="dotted-circle" width="200" height="200">
+                    <!--2*pi*92 = 577.76; 577.76/60 = 9.629333; 1.5 of width, 8.129333 of gap -->
+                    <circle cx="50%" cy="50%" r="92" stroke="#FFFFFF" fill="none" stroke-width="1.5"
+                        stroke-dasharray="1.5, 8.129333"></circle>
+                </svg>
+
+                <div class="center" id="date">MON 15 JAN 2015</div>
+                <div class="center" id="time">11:42</div>
+                <div class="center" id="info">
+                    <span id="icon"></span> <span id="beat">81</span> <span id="kcal">1248 KCAL</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let isDynamic = true;
+    if (isDynamic) {
+        let days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+        let months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let day = days[date.getDay()];
+        let month = months[date.getMonth()];
+        document.getElementById('date').textContent = `${day} ${date.getDate()} ${month} ${date.getFullYear()}`;
+        document.getElementById('time').textContent = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+    }
+</script>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+    .frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 400px;
+        margin-top: -200px;
+        margin-left: -200px;
+        border-radius: 2px;
+        box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background: #4C4C4C;
+        color: #333;
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #watch {
+        width: 210px;
+        height: 210px;
+        background: #242424;
+        border-radius: 50%;
+        border: 7px solid #3A3A3A;
+        z-index: -1;
+        color: white;
+    }
+
+    #red-circle,
+    #dotted-circle {
+        position: absolute;
+        rotate: -90deg;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
+    #red-circle {
+        animation: rotate 5s linear infinite;
+    }
+
+    #date {
+        margin-top: -33px;
+        font-size: 12px;
+        font-weight: lighter
+    }
+
+    #time {
+        margin-top: -3px;
+        font-size: 40px;
+        font-weight: bolder;
+    }
+
+    #info {
+        width: 100px;
+        align-items: center;
+        display: flex;
+        margin-top: 26px;
+        font-size: 12px;
+        font-weight: lighter
+    }
+
+    #kcal {
+        position: absolute;
+        right: 0%;
+    }
+
+    #beat {
+        position: absolute;
+        right: 70%;
+    }
+
+    #icon {
+        animation: beat 1s ease-in-out infinite;
+    }
+
+    #icon::before {
+        content: '\f004';
+        margin-right: 4px;
+        color: #F85B5B;
+    }
+
+    @keyframes rotate {
+        100% {
+            stroke-dashoffset: 0;
+        }
+
+        0% {
+            stroke-dashoffset: 1224;
+        }
+    }
+
+    @keyframes beat {
+        0% {
+            transform: scale(1);
+        }
+
+        35% {
+            transform: scale(1.2);
+        }
+
+    }
+</style>
